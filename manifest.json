@@ -1,0 +1,11 @@
+{
+  "description": "Una experiencia de chat fluida en tu página web. Esta extensión web puede conectarte con el modelo GPT sin abandonar tu sitio actual. Obtén respuestas instantáneas, brinda asistencia personalizada y manténte inmerso en una conversación sin esfuerzo. (Generado por ChatGPT)",
+  "manifest_version": 2,
+  "name": "gpt-add-on",
+  "version": "1.0",
+  "homepage_url": "https://github.com/irvingvjuarez/gpt-add-on",
+  "icons": {
+    "48": "icons/48.png",
+    "96": "icons/96.png"
+  }
+}
