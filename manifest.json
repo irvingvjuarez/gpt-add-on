@@ -7,5 +7,15 @@
   "icons": {
     "48": "icons/48.png",
     "96": "icons/96.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/32.png",
+    "theme_icons": [{
+      "light": "icons/32.png",
+      "dark": "icons/32-dark.png",
+      "size": 32,
+      "default_title": "GPT Add-on",
+      "default_popup": "popup/index.html"
+    }]
   }
 }
