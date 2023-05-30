@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 html {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -35,21 +39,29 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 var(--outer-margin);
+  padding-block: 5px;
 }
 
-.header_title {
-  font-size: 1.1rem;
-  color: var(--placeholder);
-  font-weight: 100;
-  padding: 2px 8px;
+.chat-title-wrapper {
   min-width: 50%;
   border-radius: 9px;
   cursor: text;
   border: 1px solid transparent;
+  color: var(--placeholder);
+  padding: 2px 8px;
 }
 
-.header_title:hover {
+.chat-title-wrapper > * {
+  font-size: 1.1rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+.chat-title-wrapper:hover {
   border-color: var(--white);
+}
+
+.header_title {
 }
 
 .header_button {
