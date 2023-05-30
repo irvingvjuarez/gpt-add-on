@@ -71,14 +71,11 @@ header {
 }
 
 .chat-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   margin: 0 var(--outer-margin);
 }
 
 .text-boxes-wrapper {
-  height: 134px;
+  height: 155px;
 }
 
 .chat-input-wrapper {
