@@ -14,4 +14,12 @@ Element.prototype.removeClass = function(htmlNode, className) {
   htmlNode.classList.remove(className)
 }
 
+Element.prototype.focus = function(htmlNode) {
+  htmlNode.focus()
+}
+
+Element.prototype.setText = function(htmlNode, textContent) {
+  htmlNode.textContent = textContent
+}
+
 export default new Element()
