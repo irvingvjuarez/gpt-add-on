@@ -43,5 +43,5 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
   }
 
   document.querySelector("body").addEventListener("click", clickListener)
-  setupInputTitleListeners()
+  setupInputTitleListeners() // TODO: Element.setListener(htmlNode, eventList)
 }())
