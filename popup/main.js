@@ -2,11 +2,13 @@ import { isTargetSubmitButton, isTargetTitle } from "./utils/isTargetElement.js"
 import Element from "./controllers/element.js"
 
 (function() {
-  const chatTitleWrapper = document.querySelector(".chat-title-wrapper")
+  "use strict";
+
+  const chatTitleWrapper = document.querySelector(".title-wrapper")
   const textTitle = chatTitleWrapper.children[1]
   const inputTitle = chatTitleWrapper.children[0]
 
-  const chatForm = document.querySelector(".chat-input-wrapper")
+  const chatForm = document.querySelector(".title-wrapper_input")
 
   function toggleTitleInput() {
     const hideClass = "hidden"

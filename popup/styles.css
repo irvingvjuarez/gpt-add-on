@@ -42,7 +42,7 @@ header {
   padding-block: 5px;
 }
 
-.chat-title-wrapper {
+.title-wrapper {
   min-width: 50%;
   border-radius: 9px;
   cursor: text;
@@ -51,17 +51,23 @@ header {
   padding: 2px 8px;
 }
 
-.chat-title-wrapper > * {
+.title-wrapper > * {
   font-size: 1.1rem;
   font-weight: 100;
   margin: 0;
+  color: var(--white);
 }
 
-.chat-title-wrapper:hover {
+.title-wrapper_input {
+  font-size: 1rem;
+  background: none;
+  border: 0;
+  font-weight: 600;
+  outline: none;
+}
+
+.title-wrapper:hover {
   border-color: var(--white);
-}
-
-.header_title {
 }
 
 .header_button {
