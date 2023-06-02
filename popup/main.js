@@ -31,9 +31,15 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
     }
   }
 
+  function searchForEnter(evt) {
+    if (evt.code === "Enter") {
+      evt.target.blur()
+    }
+  }
+
   function setupInputTitleListeners() {
     inputTitle.addEventListener("blur", updateChatName)
-
+    inputTitle.addEventListener("keyup", searchForEnter)
   }
 
   document.querySelector("body").addEventListener("click", clickListener)

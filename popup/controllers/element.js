@@ -19,7 +19,7 @@ Element.prototype.focus = function(htmlNode) {
 }
 
 Element.prototype.setText = function(htmlNode, textContent) {
-  htmlNode.textContent = textContent
+  htmlNode.textContent = textContent || "New chat"
 }
 
 export default new Element()

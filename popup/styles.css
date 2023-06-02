@@ -49,6 +49,7 @@ header {
   border: 1px solid transparent;
   color: var(--placeholder);
   padding: 2px 8px;
+  height: 20px;
 }
 
 .title-wrapper > * {
@@ -56,6 +57,7 @@ header {
   font-weight: 100;
   margin: 0;
   color: var(--white);
+  height: inherit;
 }
 
 .title-wrapper_input {
