@@ -1,5 +1,6 @@
 import { isTargetSubmitButton, isTargetTitle } from "./utils/isTargetElement.js"
 import Element from "./controllers/element.js"
+import toggleTitleInput from "./utils/toggleTitleInput.js";
 
 (function() {
   "use strict";
@@ -16,34 +17,25 @@ import Element from "./controllers/element.js"
     // TODO: save the chatName along with
     // its content in the browser memory
 
-    toggleTitleInput()
-  }
-
-  function toggleTitleInput() {
-    const hideClass = "hidden"
-
-    if ( Element.isVisible(textTitle) ) {
-      Element.addClass(textTitle, hideClass)
-
-      Element.removeClass(inputTitle, hideClass)
-      Element.focus(inputTitle)
-    } else {
-      Element.addClass(inputTitle, hideClass)
-      Element.removeClass(textTitle, hideClass)
-    }
+    toggleTitleInput(inputTitle, textTitle)
   }
 
   function clickListener(evt) {
     const target = evt.target
 
     if ( isTargetTitle(target) ) {
-      toggleTitleInput()
+      toggleTitleInput(inputTitle, textTitle)
     } else if ( isTargetSubmitButton(target) ) {
       // TODO: handleSubmitMessage()
       console.log("handleSubmitMessage")
     }
   }
 
+  function setupInputTitleListeners() {
+    inputTitle.addEventListener("blur", updateChatName)
+
+  }
+
   document.querySelector("body").addEventListener("click", clickListener)
-  inputTitle.addEventListener("blur", updateChatName)
+  setupInputTitleListeners()
 }())
