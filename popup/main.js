@@ -40,10 +40,21 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
     }
   }
 
+  function addUserPrompt(evt) {
+    evt.preventDefault()
+    const promptContent = evt.target[0].value
+
+    if (!promptContent)
+      Element.cleanInput(chatForm.children[0])
+
+    // TODO: Visual feedback in popup
+    console.log(promptContent)
+  }
+
   document.querySelector("body").addEventListener("click", clickListener)
   Element.setListeners(inputTitle, [
     {name: "blur", action: updateChatName},
     {name: "keyup", action: searchForEnter}
   ])
-  // chatForm.addEventListener("submit", addUserPrompt)
+  chatForm.addEventListener("submit", addUserPrompt)
 }())

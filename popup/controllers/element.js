@@ -28,4 +28,13 @@ Element.prototype.setListeners = function(htmlNode, eventListeners) {
   )
 }
 
+Element.prototype.cleanInput = function(htmlInput) {
+  const nodeTagName = htmlInput.tagName
+
+  if (nodeTagName !== "INPUT")
+    throw new TypeError(`${htmlInput.tagName} must be INPUT`)
+
+  htmlInput.value = ""
+}
+
 export default new Element()
