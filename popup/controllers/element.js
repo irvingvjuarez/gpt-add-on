@@ -18,8 +18,14 @@ Element.prototype.focus = function(htmlNode) {
   htmlNode.focus()
 }
 
-Element.prototype.setText = function(htmlNode, textContent) {
-  htmlNode.textContent = textContent || "New chat"
+Element.prototype.setText = function(htmlNode, textContent, defaultValue = "") {
+  htmlNode.textContent = textContent || defaultValue
+}
+
+Element.prototype.setListeners = function(htmlNode, eventListeners) {
+  eventListeners.forEach(
+    evt => htmlNode.addEventListener(evt.name, evt.action)
+  )
 }
 
 export default new Element()

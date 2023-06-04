@@ -12,7 +12,7 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
   const chatForm = document.querySelector(".title-wrapper_input")
 
   function updateChatName(evt) {
-    Element.setText(textTitle, evt.target.value)
+    Element.setText(textTitle, evt.target.value, "New chat")
 
     // TODO: save the chatName along with
     // its content in the browser memory
@@ -37,11 +37,9 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
     }
   }
 
-  function setupInputTitleListeners() {
-    inputTitle.addEventListener("blur", updateChatName)
-    inputTitle.addEventListener("keyup", searchForEnter)
-  }
-
   document.querySelector("body").addEventListener("click", clickListener)
-  setupInputTitleListeners() // TODO: Element.setListener(htmlNode, eventList)
+  Element.setListeners(inputTitle, [
+    {name: "blur", action: updateChatName},
+    {name: "keyup", action: searchForEnter}
+  ])
 }())
