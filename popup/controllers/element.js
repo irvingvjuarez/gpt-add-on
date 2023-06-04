@@ -37,4 +37,16 @@ Element.prototype.cleanInput = function(htmlInput) {
   htmlInput.value = ""
 }
 
+Element.prototype.create = function(tagName, options) {
+  const newHtmlNode = document.createElement(tagName)
+
+  if (Object.getOwnPropertyNames(options).length) {
+    Object.keys(options).forEach(key => 
+      newHtmlNode[key] = options[key]
+    )
+  }
+
+  return newHtmlNode
+}
+
 export default new Element()

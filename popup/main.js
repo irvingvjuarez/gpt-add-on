@@ -9,6 +9,7 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
   const textTitle = chatTitleWrapper.children[1]
   const inputTitle = chatTitleWrapper.children[0]
   const chatForm = document.querySelector(".chat-input-wrapper")
+  const chatContainer = document.querySelector(".text-boxes-wrapper")
 
   function updateChatName(evt) {
     Element.setText(textTitle, evt.target.value, "New chat")
@@ -44,11 +45,16 @@ import toggleTitleInput from "./utils/toggleTitleInput.js";
     evt.preventDefault()
     const promptContent = evt.target[0].value
 
-    if (!promptContent)
-      Element.cleanInput(chatForm.children[0])
-
-    // TODO: Visual feedback in popup
-    console.log(promptContent)
+    if (promptContent) {
+      chatContainer.appendChild(
+        Element.create("div", {
+          className: "user-chatbox",
+          textContent: promptContent
+        })
+      )
+    }
+      
+    Element.cleanInput(chatForm.children[0])
   }
 
   document.querySelector("body").addEventListener("click", clickListener)
